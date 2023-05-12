@@ -65,21 +65,22 @@ public class Pizza {
     public String getBill(){
         // your code goes here
         StringBuilder sb = new StringBuilder();
-        sb.append("Base Price Of The Pizza: ").append(isVeg ? 300 : 400).append("\n");
+        sb.append("Base Price Of The Pizza: ").append(price).append("\n");
         if(extraCheese){
-            sb.append("Extra Cheese Added: 80\n");
+            sb.append("Extra Cheese Added: "+extraCheesePrice+"\n");
         }
         if(extraToppings){
             if(isVeg){
-                sb.append("Extra Toppings Added: 70\n");
+                sb.append("Extra Toppings Added: "+extraToppingsPriceVeg+"\n");
             } else {
-                sb.append("Extra Toppings Added: 120\n");
+                sb.append("Extra Toppings Added: "+extraToppingsPriceNonVeg+"\n");
             }
         }
         if(takeaway){
-            sb.append("Paperbag Added: 20\n");
+            sb.append("Paperbag Added: "+paperbagPrice+"\n");
         }
         sb.append("Total Price: ").append(this.totalBillPrice).append("\n");
-        return sb.toString();
+        this.bill = sb.toString();
+        return this.bill;
     }
 }
