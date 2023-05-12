@@ -2,7 +2,7 @@ package com.driver;
 
 public class Pizza {
 
-    private int price;
+    private final int price;
     private final Boolean isVeg;
     private boolean extraCheese;
     private boolean extraToppings;
@@ -11,6 +11,7 @@ public class Pizza {
     private final int extraCheesePrice;
     private final int extraToppingsPriceVeg;
     private final int extraToppingsPriceNonVeg;
+    private int totalBill;
     private String bill;
 
     public Pizza(Boolean isVeg){
@@ -18,10 +19,10 @@ public class Pizza {
         // your code goes here
         if(isVeg) {
             this.price = 300;
-            this.price = 300;
+            this.totalBill = 300;
         } else {
             this.price = 400;
-            this.price = 400;
+            this.totalBill = 400;
         }
         this.paperbagPrice = 20;
         this.extraCheesePrice = 80;
@@ -37,7 +38,7 @@ public class Pizza {
         // your code goes here
         if(!extraCheese) {
             this.extraCheese = true;
-            this.price += extraCheesePrice;
+            this.totalBill += extraCheesePrice;
         }
     }
 
@@ -46,9 +47,9 @@ public class Pizza {
         if(!extraToppings) {
             this.extraToppings = true;
             if(isVeg) {
-                this.price += extraToppingsPriceVeg;
+                this.totalBill += extraToppingsPriceVeg;
             } else {
-                this.price += extraToppingsPriceNonVeg;
+                this.totalBill += extraToppingsPriceNonVeg;
             }
         }
     }
@@ -57,7 +58,7 @@ public class Pizza {
         // your code goes here
         if(!takeaway) {
             this.takeaway = true;
-            this.price += paperbagPrice;
+            this.totalBill += paperbagPrice;
         }
     }
 
@@ -66,19 +67,19 @@ public class Pizza {
         StringBuilder sb = new StringBuilder();
         sb.append("Base Price Of The Pizza: ").append(price).append("\n");
         if(extraCheese){
-            sb.append("Extra Cheese Added: "+extraCheesePrice+"\n");
+            sb.append("Extra Cheese Added: ").append(extraCheesePrice).append("\n");
         }
         if(extraToppings){
             if(isVeg){
-                sb.append("Extra Toppings Added: "+extraToppingsPriceVeg+"\n");
+                sb.append("Extra Toppings Added: ").append(extraToppingsPriceVeg).append("\n");
             } else {
-                sb.append("Extra Toppings Added: "+extraToppingsPriceNonVeg+"\n");
+                sb.append("Extra Toppings Added: ").append(extraToppingsPriceNonVeg).append("\n");
             }
         }
         if(takeaway){
-            sb.append("Paperbag Added: "+paperbagPrice+"\n");
+            sb.append("Paperbag Added: ").append(paperbagPrice).append("\n");
         }
-        sb.append("Total Price: ").append(this.price).append("\n");
+        sb.append("Total Price: ").append(this.totalBill).append("\n");
         this.bill = sb.toString();
         return this.bill;
     }
