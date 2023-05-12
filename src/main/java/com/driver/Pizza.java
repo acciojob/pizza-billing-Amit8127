@@ -2,12 +2,11 @@ package com.driver;
 
 public class Pizza {
 
-    private final int price;
+    private int price;
     private final Boolean isVeg;
     private boolean extraCheese;
     private boolean extraToppings;
     private boolean takeaway;
-    private int totalBillPrice;
     private final int paperbagPrice;
     private final int extraCheesePrice;
     private final int extraToppingsPriceVeg;
@@ -19,10 +18,10 @@ public class Pizza {
         // your code goes here
         if(isVeg) {
             this.price = 300;
-            this.totalBillPrice = 300;
+            this.price = 300;
         } else {
             this.price = 400;
-            this.totalBillPrice = 400;
+            this.price = 400;
         }
         this.paperbagPrice = 20;
         this.extraCheesePrice = 80;
@@ -38,7 +37,7 @@ public class Pizza {
         // your code goes here
         if(!extraCheese) {
             this.extraCheese = true;
-            this.totalBillPrice += extraCheesePrice;
+            this.price += extraCheesePrice;
         }
     }
 
@@ -47,9 +46,9 @@ public class Pizza {
         if(!extraToppings) {
             this.extraToppings = true;
             if(isVeg) {
-                this.totalBillPrice += extraToppingsPriceVeg;
+                this.price += extraToppingsPriceVeg;
             } else {
-                this.totalBillPrice += extraToppingsPriceNonVeg;
+                this.price += extraToppingsPriceNonVeg;
             }
         }
     }
@@ -58,7 +57,7 @@ public class Pizza {
         // your code goes here
         if(!takeaway) {
             this.takeaway = true;
-            this.totalBillPrice += paperbagPrice;
+            this.price += paperbagPrice;
         }
     }
 
@@ -79,7 +78,7 @@ public class Pizza {
         if(takeaway){
             sb.append("Paperbag Added: "+paperbagPrice+"\n");
         }
-        sb.append("Total Price: ").append(this.totalBillPrice).append("\n");
+        sb.append("Total Price: ").append(this.price).append("\n");
         this.bill = sb.toString();
         return this.bill;
     }
