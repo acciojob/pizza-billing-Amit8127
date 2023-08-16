@@ -85,16 +85,16 @@ public class Pizza {
         // your code goes here
         this.bill += "Base Price Of The Pizza: "+this.basePrice+"\n";
         if(extraCheese){
-            this.bill += "Extra Cheese Added: "+this.extraCheesePrice+"\n";
+            this.bill += "Extra Cheese Added: "+extraCheesePrice+"\n";
         }
         if(extraToppings && isVeg){
-            this.bill += "Extra Toppings Added: " + this.extraToppingsPriceVeg + "\n";
+            this.bill += "Extra Toppings Added: " + extraToppingsPriceVeg + "\n";
         }
         else if(extraToppings && !isVeg){
-            this.bill += "Extra Toppings Added: " + this.extraToppingsPriceNonVeg + "\n";
+            this.bill += "Extra Toppings Added: " + extraToppingsPriceNonVeg + "\n";
         }
         if(takeaway){
-            this.bill += "Paperbag Added: "+this.paperbagPrice+"\n";
+            this.bill += "Paperbag Added: "+paperbagPrice+"\n";
         }
         this.bill += "Total Price: "+this.price+"\n";
 
