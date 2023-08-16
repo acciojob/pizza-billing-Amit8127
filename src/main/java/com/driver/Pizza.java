@@ -61,43 +61,23 @@ public class Pizza {
         }
     }
 
-//    public String getBill(){
-//        // your code goes here
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
-//        if(extraCheese){
-//            sb.append("Extra Cheese Added: ").append(extraCheesePrice).append("\n");
-//        }
-//        if(extraToppings && isVeg) {
-//            sb.append("Extra Toppings Added: ").append(extraToppingsPriceVeg).append("\n");
-//        } else if (extraToppings && !isVeg) {
-//            sb.append("Extra Toppings Added: ").append(extraToppingsPriceNonVeg).append("\n");
-//        }
-//        if(takeaway){
-//            sb.append("Paperbag Added: ").append(paperbagPrice).append("\n");
-//        }
-//        sb.append("Total Price: ").append(this.price).append("\n");
-//        this.bill = sb.toString();
-//        return this.bill;
-//    }
-
     public String getBill(){
         // your code goes here
-        this.bill = "Base Price Of The Pizza: "+basePrice+" \n";
+        StringBuilder sb = new StringBuilder();
+        sb.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
         if(extraCheese){
-            this.bill += "Extra Cheese Added: "+extraCheesePrice+" \n";
+            sb.append("Extra Cheese Added: ").append(extraCheesePrice).append("\n");
         }
-        if(extraToppings && isVeg){
-            this.bill += "Extra Toppings Added: " + extraToppingsPriceVeg + " \n";
-        }
-        else if(extraToppings && !isVeg){
-            this.bill += "Extra Toppings Added: " + extraToppingsPriceNonVeg + " \n";
+        if(extraToppings && isVeg) {
+            sb.append("Extra Toppings Added: ").append(extraToppingsPriceVeg).append("\n");
+        } else if (extraToppings && !isVeg) {
+            sb.append("Extra Toppings Added: ").append(extraToppingsPriceNonVeg).append("\n");
         }
         if(takeaway){
-            this.bill += "Paperbag Added: "+paperbagPrice+" \n";
+            sb.append("Paperbag Added: ").append(paperbagPrice).append("\n");
         }
-        this.bill += "Total Price: "+this.price+" \n";
-
+        sb.append("Total Price: ").append(this.price).append("\n");
+        this.bill = sb.toString();
         return this.bill;
     }
 }
