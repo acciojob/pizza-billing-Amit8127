@@ -61,23 +61,43 @@ public class Pizza {
         }
     }
 
+//    public String getBill(){
+//        // your code goes here
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
+//        if(extraCheese){
+//            sb.append("Extra Cheese Added: ").append(extraCheesePrice).append("\n");
+//        }
+//        if(extraToppings && isVeg) {
+//            sb.append("Extra Toppings Added: ").append(extraToppingsPriceVeg).append("\n");
+//        } else if (extraToppings && !isVeg) {
+//            sb.append("Extra Toppings Added: ").append(extraToppingsPriceNonVeg).append("\n");
+//        }
+//        if(takeaway){
+//            sb.append("Paperbag Added: ").append(paperbagPrice).append("\n");
+//        }
+//        sb.append("Total Price: ").append(this.price).append("\n");
+//        this.bill = sb.toString();
+//        return this.bill;
+//    }
+
     public String getBill(){
         // your code goes here
-        StringBuilder sb = new StringBuilder();
-        sb.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
+        this.bill += "Base Price Of The Pizza: "+this.basePrice+"\n";
         if(extraCheese){
-            sb.append("Extra Cheese Added: ").append(extraCheesePrice).append("\n");
+            this.bill += "Extra Cheese Added: "+this.extraCheesePrice+"\n";
         }
-        if(extraToppings && isVeg) {
-            sb.append("Extra Toppings Added: ").append(extraToppingsPriceVeg).append("\n");
-        } else if (extraToppings && !isVeg) {
-            sb.append("Extra Toppings Added: ").append(extraToppingsPriceNonVeg).append("\n");
+        if(extraToppings && isVeg){
+            this.bill += "Extra Toppings Added: " + this.extraToppingsPriceVeg + "\n";
+        }
+        else if(extraToppings && !isVeg){
+            this.bill += "Extra Toppings Added: " + this.extraToppingsPriceNonVeg + "\n";
         }
         if(takeaway){
-            sb.append("Paperbag Added: ").append(paperbagPrice).append("\n");
+            this.bill += "Paperbag Added: "+this.paperbagPrice+"\n";
         }
-        sb.append("Total Price: ").append(this.price).append("\n");
-        this.bill = sb.toString();
+        this.bill += "Total Price: "+this.price+"\n";
+
         return this.bill;
     }
 }
